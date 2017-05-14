@@ -20,6 +20,7 @@ export default class BobyIndex extends React.Component {
                 <h2>页面主体</h2>
                 <p>{this.state.username}</p>
                 <p>{this.state.age}</p>
+                <p>{this.props.userid}</p>
             </div>
         )
     }

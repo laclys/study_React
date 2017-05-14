@@ -21,7 +21,7 @@ class Index extends React.Component {
         return (
             <div>
                 {Header}
-                <BobyIndex/>
+                <BobyIndex userid={123456}/>
                 <ComponentFooter/>
             </div>
         )
