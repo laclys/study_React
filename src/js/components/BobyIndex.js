@@ -7,7 +7,7 @@ export default class BobyIndex extends React.Component{
         var boolInput = false;
 
         var html01 = 'zhang\u0020yangyang' // 解析html要用unicode转码
-        var html02 = 'zhang&nbsp;yangyang' // 或 （不推荐）比较危险的形式
+        var html02 = 'zhang&nbsp;yangyang' // 或 （不推荐）比较危险的形式 (容易造成xss攻击)
 
         // comments
 
