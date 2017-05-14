@@ -1,7 +1,17 @@
 var React = require('react');
-var ReactDom = require('react-dom');
+var ReactDOM = require('react-dom');
 
-ReactDom.render(
-    <h1>Hello World!</h1>,
-    document.getElementById('example')
-)
+import ComponentHeader from './components/header';
+
+class Index extends React.Component {
+    render() {
+        return (
+            <div>
+                <ComponentHeader/>
+            </div>
+        )
+    }
+}
+
+ReactDOM.render(
+    <Index/>, document.getElementById('example'));
