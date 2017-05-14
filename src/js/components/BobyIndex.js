@@ -1,6 +1,15 @@
 import React from 'react';
 
 export default class BobyIndex extends React.Component{
+
+    componentWillMount() {
+        console.log('body_index_componentWillMount');
+    }
+
+    componentDidMount() {
+        console.log('body_index_componentDidMount')
+    }
+
     render (){
 
         var userName = 'Lac';

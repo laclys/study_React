@@ -6,6 +6,16 @@ import ComponentFooter from './components/footer';
 import BobyIndex from './components/BobyIndex';
 
 class Index extends React.Component {
+
+    componentWillMount() {
+        console.log('index_componentWillMount');
+    }
+
+    componentDidMount() {
+        console.log('index_componentDidMount')
+    }
+
+
     render() {
         var Header = <ComponentHeader/>;
         return (
