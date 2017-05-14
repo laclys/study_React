@@ -1,6 +1,8 @@
 import React from 'react';
 import BodyChild from './bodyChild';
 
+import PropTypes from 'prop-types';
+
 export default class BobyIndex extends React.Component {
     constructor() {
         super(); // 调用基类的所有初始化方法
@@ -27,18 +29,25 @@ export default class BobyIndex extends React.Component {
                 <h2>页面主体</h2>
                 <p>{this.state.username}</p>
                 <p>{this.state.age}</p>
-                <p>{this.props.userid}</p>
+
+                <p>接收到的父页面的属性：{this.props.userid}</p>
                 <input
                     type="button"
                     value="提交"
                     onClick={this
                     .changeUserInfo
-                    .bind(this,18)}/>
+                    .bind(this, 18)}/>
+                    {/*...：把父页面所有属性拿过来*/}
                 <BodyChild
+                    {...this.props}
                     handleChildValueChange={this
                     .handleChildValueChange
                     .bind(this)}/>
             </div>
         )
     }
+}
+// 类型约束
+BobyIndex.propTypes = {
+    userid: PropTypes.number
 }
