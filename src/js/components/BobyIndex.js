@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import BodyChild from './bodyChild';
 
+import ReactMixin from 'react-mixin';
+import MixinLog from './mixins';
+
 import PropTypes from 'prop-types';
 
 export default class BobyIndex extends React.Component {
@@ -21,6 +24,8 @@ export default class BobyIndex extends React.Component {
 
         // 第二种方式 （推荐）
         console.log(this.refs.submitButto);
+
+        MixinLog.log();
 
     };
     handleChildValueChange(event) {
@@ -59,3 +64,5 @@ export default class BobyIndex extends React.Component {
 BobyIndex.propTypes = {
     userid: PropTypes.number
 }
+
+ReactMixin(BobyIndex.prototype,MixinLog);
