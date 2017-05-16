@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import BodyChild from './bodyChild';
 
 import PropTypes from 'prop-types';
@@ -14,6 +15,13 @@ export default class BobyIndex extends React.Component {
 
     changeUserInfo(age) {
         this.setState({age: age});
+        // 操作原生DOM第一种方式
+        var mySubmitBtn=document.getElementById("submitButton");
+        ReactDOM.findDOMNode(mySubmitBtn).style.color='red';
+
+        // 第二种方式 （推荐）
+        console.log(this.refs.submitButto);
+
     };
     handleChildValueChange(event) {
         this.setState({age: event.target.value});
@@ -31,7 +39,7 @@ export default class BobyIndex extends React.Component {
                 <p>{this.state.age}</p>
 
                 <p>接收到的父页面的属性：{this.props.userid}</p>
-                <input
+                <input id="submitButton" ref="submitButto"
                     type="button"
                     value="提交"
                     onClick={this
